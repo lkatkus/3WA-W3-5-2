@@ -8,7 +8,13 @@
         <!-- BOOTSTRAP LINKS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+        <!-- CHART JS -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+
+        <!-- FONTAWESOME AND GOOGLE FONTS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
 
         <!-- CUSTOM CSS -->
         <link rel="stylesheet" href="css/style.css">
@@ -19,22 +25,40 @@
 
         <div class="container">
             <header>
-                <div class="row">
-                    <nav>
-                        <div class="col-sm-4 text-center text-justify-sm-center logoDiv">
+                <div class="row position-relative">
+                    <nav class="">
+                        <div class="col-sm-4 text-center logo-justify-sm-center logoDiv">
                             <img src="img/logo.svg" alt="">
                             <p>John Doe</p>
                         </div>
-                        <div class="col-sm-8 text-center">
-                            <div class="col-xs-4">
-                                Accueil
-                            </div>
-                            <div class="col-xs-4">
-                                Realisations
-                            </div>
-                            <div class="col-xs-4">
-                                Contact
-                            </div>
+                        <div class="col-sm-8 text-center valign">
+
+                            <a href="#">
+                                <div class="col-xs-4">
+                                    <div class="navs">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <p>Accueil</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="col-xs-4">
+                                    <div class="navs">
+                                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                                        <p>Realisations</p>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="col-xs-4">
+                                    <div class="navs">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        <p>Contact</p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </nav>
                 </div>
@@ -46,8 +70,42 @@
         <div class="jumbotron">
             <div class="container text-center">
                 <h2>Bonjour et bienvenue sur mon porfolio</h2>
-                <p>Pork belly landjaeger picanha corned beef tail tenderloin. T-bone pancetta ball tip jerky andouille ham strip steak capicola shank rump jowl. Shankle porchetta leberkas meatloaf beef. Sausage pig pork beef ribs, frankfurter ribeye capicola ball tip chuck chicken cupim jowl t-bone. Short loin landjaeger salami alcatra, meatball turkey beef ribs. Meatball ribeye turducken pancetta meatloaf pig ham hock chicken ground round.</p>
+                <p>Pork belly landjaeger picanha corned beef tail tenderloin. T-bone pancetta ball tip jerky andouille ham strip steak capicola shank rump jowl. Shankle porchetta leberkas meatloaf beef.</p>
                 <p><a class="btn btn-primary btn-lg" href="#" role="button">Decouvrez-moi</a></p>
+            </div>
+        </div>
+
+        <!-- CANVAS -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-offset-2 col-sm-8">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <script>
+                    var ctx = document.getElementById("myChart");
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ["JS", "CSS", "HTML"],
+                            datasets: [{
+                                label: '# of Votes',
+                                data: [30, 30, 40],
+                                backgroundColor: [
+                                    'rgba(243, 69, 60, 1)',
+                                    'rgba(244, 129, 58, 1)',
+                                    'rgba(245, 174, 40, 1)'
+                                ]
+                            }]
+                        },
+                        options: {
+                            cutoutPercentage:50,
+                            legend:{
+                                display:false
+                            }
+                        }
+                    });
+                    </script>
+                </div>
             </div>
         </div>
 
@@ -62,7 +120,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="text-center">
-                        <i class="iconDiv fa fa-coffee fa-2x" aria-hidden="true"></i>
+                        <i class="icon fa fa-coffee fa-3x" aria-hidden="true"></i>
                     </div>
                     <h2>On discute</h2>
                     <hr>
@@ -71,7 +129,7 @@
 
                 <div class="col-sm-4">
                     <div class="text-center">
-                        <i class="iconDiv fa fa-flask fa-2x" aria-hidden="true"></i>
+                        <i class="icon fa fa-flask fa-3x" aria-hidden="true"></i>
                     </div>
                     <h2>On tente</h2>
                     <hr>
@@ -80,16 +138,13 @@
 
                 <div class="col-sm-4">
                     <div class="text-center">
-                        <i class="iconDiv fa fa-code fa-2x" aria-hidden="true"></i>
+                        <i class="icon fa fa-code fa-3x" aria-hidden="true"></i>
                     </div>
                     <h2>On code</h2>
                     <hr>
                     <p>Bacon ipsum dolor amet ham biltong capicola, tail bacon buffalo kielbasa alcatra salami hamburger doner venison ball tip. Chicken filet mignon chuck, andouille meatloaf sausage short ribs doner alcatra pork loin tri-tip ball tip flank.</p>
                 </div>
             </div>
-
-
-
 
             <div class="row">
                 <div class="col-sm-12">
@@ -108,9 +163,7 @@
 
                         <p>Pork belly landjaeger picanha corned beef tail tenderloin. T-bone pancetta ball tip jerky andouille ham strip steak capicola shank rump jowl. Shankle porchetta leberkas meatloaf beef. Sausage pig pork beef ribs, frankfurter ribeye capicola ball tip chuck chicken cupim jowl t-bone. Short loin landjaeger salami alcatra, meatball turkey beef ribs. Meatball ribeye turducken pancetta meatloaf pig ham hock chicken ground round.</p>
 
-                        <div class="">
-                            <a href="#">En savoir plus</a>
-                        </div>
+                        <a href="#">En savoir plus</a>
                     </div>
                     <div class="col-sm-6">
                         <img class="img-responsive" src="img/real/1.png" alt="Picture of an orange">
@@ -129,9 +182,7 @@
 
                         <p>Pork belly landjaeger picanha corned beef tail tenderloin. T-bone pancetta ball tip jerky andouille ham strip steak capicola shank rump jowl. Shankle porchetta leberkas meatloaf beef. Sausage pig pork beef ribs, frankfurter ribeye capicola ball tip chuck chicken cupim jowl t-bone. Short loin landjaeger salami alcatra, meatball turkey beef ribs. Meatball ribeye turducken pancetta meatloaf pig ham hock chicken ground round.</p>
 
-                        <div class="">
-                            <a href="#">En savoir plus</a>
-                        </div>
+                        <a href="#">En savoir plus</a>
                     </div>
                 </section>
 
@@ -144,9 +195,7 @@
 
                         <p>Pork belly landjaeger picanha corned beef tail tenderloin. T-bone pancetta ball tip jerky andouille ham strip steak capicola shank rump jowl. Shankle porchetta leberkas meatloaf beef. Sausage pig pork beef ribs, frankfurter ribeye capicola ball tip chuck chicken cupim jowl t-bone. Short loin landjaeger salami alcatra, meatball turkey beef ribs. Meatball ribeye turducken pancetta meatloaf pig ham hock chicken ground round.</p>
 
-                        <div class="">
-                            <a href="#">En savoir plus</a>
-                        </div>
+                        <a href="#">En savoir plus</a>
                     </div>
                     <div class="col-sm-6">
                         <img class="img-responsive" src="img/real/3.png" alt="Picture of an orange">
@@ -163,15 +212,34 @@
                         <hr>
                         <p>Pork belly landjaeger picanha corned beef tail tenderloin. T-bone pancetta ball tip jerky andouille ham strip steak capicola shank rump jowl. Shankle porchetta leberkas meatloaf beef. Sausage pig pork beef ribs, frankfurter ribeye capicola ball tip chuck chicken cupim jowl t-bone. Short loin landjaeger salami alcatra, meatball turkey beef ribs. Meatball ribeye turducken pancetta meatloaf pig ham hock chicken ground round.</p>
                     </div>
+                </div>
 
+                <br>
+
+                <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name ="userName" placeholder="Your name">
+                        <div class="inputDiv">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="addonImg1"><img src="img/bg_form_name.svg" alt="name input image"></span>
+                                <input type="text" class="form-control" name ="userName" placeholder="Your name" aria-describedby="addonImg1">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name ="userEmail" placeholder="Your e-mail">
+                        <div class="inputDiv">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="addonImg2"><img src="img/bg_form_mail.svg" alt="mail input image"></span>
+                                <input type="text" class="form-control" name ="userEmail" placeholder="Your e-mail" aria-describedby="addonImg2">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name ="userEmail" placeholder="Your message">
+                        <div class="inputDiv">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="addonImg3"><img src="img/bg_form_message.svg" alt="message input image"></span>
+                                <input type="text" class="form-control" name ="userEmail" placeholder="Your message" aria-describedby="addonImg3">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,17 +1,78 @@
 body{
     background-image: url('../img/fond.png');
+    font-family: 'Bree Serif', serif;
+    font-size: 14px;
 }
 
 header{
+    padding:20px 0 20px 0;
+}
+
+nav a{
+    color: inherit;
+}
+
+a{
+    color: #ea1a62;
+}
+
+nav p{
+    margin: 0;
+}
+
+p + a{
     padding: 10px;
+    transition: all 0.5s;
+}
+
+p + a:hover{
+    text-decoration: none;
+    background-color: #f5246c;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+p + a::after{
+    font-family: FontAwesome;
+    content: " \f055";
+    color: #ea1a62;
+}
+
+.container{
+    max-width: 1100px;
 }
 
 .logoDiv p{
     display: inline-block;
-    margin: 0;
+    margin: 0 0 0 10px;
+    font-size: 2rem;
 }
 
+.navs{
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.5s;
+    padding: 5px;
+}
+
+.position-relative{
+    position: relative;
+}
+
+.navs:hover{
+    background-color: #f5246c;
+    border-radius: 0.5rem;
+    color: white;
+}
 /*HEADING STYLING*/
+
+.jumbotron, .jumbotron h2{
+    color: white;
+}
+
+h2, h3{
+    color: #ea1a62;
+}
 
 h2{
     text-align: center;
@@ -34,6 +95,10 @@ h2::after{
 
 /*NAVBAR STYLING*/
 
+.logo-justify-sm-center{
+    margin-bottom: 20px;
+}
+
 nav img{
     display: inline-block;
     width: 100px;
@@ -45,22 +110,70 @@ ul{
     margin: 0;
 }
 
-
-.iconDiv{
+.icon{
     background-color: rgba(0, 0, 0, 0.1);
     display: inline-block;
-    padding: 10px;
+    padding: 20px;
     border-radius: 50%;
     border: 1px solid #d3d3d3;
     color: #b1b1b1;
-    text-align: center;
 }
 
+/*BUTTONS STYLING*/
+.btn-primary{
+    background-color: #f5246c;
+    border: 1px solid #974252;
+    transition: all 0.5s;
+}
+
+.btn-primary:hover{
+    background-color: #b74359;
+    border: 1px solid #a7384d;
+    transition: all 0.5s;
+}
 
 /* MEDIA QUERY OVERWRITE */
 /* CENTERING LOGO FOR MOBILE */
 @media (min-width: 768px) {
-    .text-justify-sm-center {
+    .logo-justify-sm-center {
         text-align: left;
+        margin-bottom: 0;
     }
+
+    .valign{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+}
+
+/*INPUT STYLING*/
+
+span > img{
+    width: 30px;
+}
+
+.form-control{
+    height: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: unset;
+}
+
+.input-group-addon{
+    border:none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.inputDiv{
+    border: 1px solid #d3d3d3;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
