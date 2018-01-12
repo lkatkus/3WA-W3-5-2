@@ -1,4 +1,21 @@
+body{
+    background-image: url('../img/fond.png');
+}
+
+header{
+    padding: 10px;
+}
+
+.logoDiv p{
+    display: inline-block;
+    margin: 0;
+}
+
 /*HEADING STYLING*/
+
+h2{
+    text-align: center;
+}
 
 h2::before{
     content: "- ";
@@ -6,4 +23,44 @@ h2::before{
 
 h2::after{
     content: " -";
+}
+
+/*JUMBOTRON STYLING*/
+
+.jumbotron{
+    background-image: url('../img/bg_header.jpg');
+    background-size: cover;
+}
+
+/*NAVBAR STYLING*/
+
+nav img{
+    display: inline-block;
+    width: 100px;
+}
+
+ul{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+
+.iconDiv{
+    background-color: rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid #d3d3d3;
+    color: #b1b1b1;
+    text-align: center;
+}
+
+
+/* MEDIA QUERY OVERWRITE */
+/* CENTERING LOGO FOR MOBILE */
+@media (min-width: 768px) {
+    .text-justify-sm-center {
+        text-align: left;
+    }
 }
